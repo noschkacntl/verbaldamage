@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f0e8">
+  <title>Verbal Damage — Das Monatskontingent</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Verbal Damage Startseite"><span class="brand-mark">V<span>D</span></span><span>VERBAL<br>DAMAGE</span></a>
+      <div class="top-meta"><span class="live-dot"></span><span>PRIVAT ARCHIV</span><span class="top-divider"></span><span id="month-label">MONAT</span></div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span>01</span> DIE REGELN SIND EINFACH</p>
+          <h1>Worte haben<br><em>Konsequenzen.</em></h1>
+          <p class="intro">Zwei Menschen. Je ein verbaler Treffer im Monat. Wählt eure Worte weise — oder schreibt sie wenigstens auf.</p>
+          <a class="text-link" href="#archiv">Zum Archiv <span aria-hidden="true">↘</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="burst"><span>VD</span></div>
+          <span class="art-word art-word-one">OUCH</span><span class="art-word art-word-two">*</span>
+          <span class="art-caption">EIN TREFFER.<br>PRO MONAT.</span>
+          <span class="art-index">FIG. 001 — 2025</span>
+        </div>
+      </section>
+
+      <section class="score-section" aria-labelledby="score-heading">
+        <div class="section-heading"><div><p class="eyebrow"><span>02</span> EUER STAND</p><h2 id="score-heading">Das Kontingent</h2></div><p class="reset-note"><span class="reset-icon">↻</span> Reset am <strong>1. des Monats</strong></p></div>
+        <div class="player-grid" id="players"><div class="loading-card">Kontingent wird geladen …</div></div>
+      </section>
+
+      <section class="log-section" aria-labelledby="log-heading">
+        <div class="section-heading"><div><p class="eyebrow"><span>03</span> DER MOMENT DER WAHRHEIT</p><h2 id="log-heading">Eintrag machen</h2></div><p class="log-aside">Der Eintrag kostet einen Treffer<br>und bleibt im Archiv.</p></div>
+        <form id="insult-form" class="entry-card">
+          <label class="field-label" for="sender">WER SPRICHT?</label>
+          <div class="select-wrap"><select id="sender" name="sender" required></select><span aria-hidden="true">⌄</span></div>
+          <label class="field-label message-label" for="message">WAS HAST DU GESAGT?</label>
+          <div class="message-wrap"><textarea id="message" name="message" maxlength="500" rows="2" placeholder="Die Worte, die in die Geschichte eingehen …" required></textarea><span id="char-count">0 / 500</span></div>
+          <div class="form-bottom"><p>Bis zu 500 Zeichen. Einmal abgeschickt, bleibt’s dabei.</p><button id="submit-button" type="submit">Eintragen <span aria-hidden="true">↗</span></button></div>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="archive-section" id="archiv" aria-labelledby="archive-heading">
+        <div class="section-heading archive-title"><div><p class="eyebrow"><span>04</span> SCHWARZ AUF WEISS</p><h2 id="archive-heading">Das Archiv</h2></div><span class="archive-count" id="archive-count">0 EINTRÄGE</span></div>
+        <div id="archive" class="archive-list"><div class="empty-state"><span class="empty-mark">“</span><p>Noch ist alles ruhig.</p><span>Der erste Eintrag wartet auf euch.</span></div></div>
+      </section>
+    </main>
+
+    <footer><a class="brand footer-brand" href="#top"><span class="brand-mark">V<span>D</span></span><span>VERBAL<br>DAMAGE</span></a><p>Ein kleines Archiv für große Worte.</p><span class="footer-note">MIT BEDACHT EINSETZEN · SEIT 2025</span></footer>
+  </div>
+</body>
+</html>

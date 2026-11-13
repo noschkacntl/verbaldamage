@@ -1,0 +1,24 @@
+services:
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_PATH: /data/verbal-damage.sqlite3
+      CORS_ORIGIN: ${CORS_ORIGIN:-http://kackhost.lan}
+      USER_ONE: ${USER_ONE:-User 1}
+      USER_TWO: ${USER_TWO:-User 2}
+    volumes:
+      - verbal-damage-data:/data
+    restart: unless-stopped
+    expose:
+      - "8000"
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "${PORT:-8080}:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  verbal-damage-data:
