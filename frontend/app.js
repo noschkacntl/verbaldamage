@@ -15,7 +15,7 @@ function dateLabel(value) {
 
 function render(data) {
   state = data;
-  $('#month-label').textContent = new Intl.DateTimeFormat('de-DE', { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${data.month}-01T00:00:00Z')).toUpperCase();
+  $('#month-label').textContent = new Intl.DateTimeFormat('de-DE', { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${data.month}-01T00:00:00Z`)).toUpperCase();
   const current = senderSelect.value;
   senderSelect.innerHTML = data.users.map((user) => `<option value="${escapeHTML(user.id)}">${escapeHTML(user.name)}</option>`).join('');
   if (data.users.some((user) => user.id === current)) senderSelect.value = current;
